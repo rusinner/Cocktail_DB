@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 // import pages
 import Home from "./pages/Home";
@@ -10,9 +10,12 @@ import Error from "./pages/Error";
 import Navbar from "./components/Navbar";
 function App() {
   return (
-    <div>
-      <h2>App </h2>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
